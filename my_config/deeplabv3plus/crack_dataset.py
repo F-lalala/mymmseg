@@ -5,7 +5,7 @@ img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 crop_size = (640, 640)
 train_pipeline = [
-    dict(type='LoadAnnotations'),
+    dict(type='LoadCrackAnnotations'),
     dict(type='LoadImageFromFile'),
     # dict(
     #     type='RandomResize',
@@ -22,7 +22,7 @@ test_pipeline = [
     # dict(type='Resize', scale=(640, 640), keep_ratio=True),
     # # add loading annotation after ``Resize`` because ground truth
     # # does not need to do resize data transform
-    dict(type='LoadAnnotations'),
+    dict(type='LoadCrackAnnotations'),
     dict(type='PackSegInputs')
 ]
 
